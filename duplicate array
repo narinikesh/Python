@@ -1,0 +1,10 @@
+# Taking user input for the array
+user_input = input("Enter the array elements separated by space: ")
+arr = list(map(int, user_input.split()))
+
+print("Duplicate elements in given array: ")
+# Searches for duplicate element
+for i in range(0, len(arr)):
+    for j in range(i+1, len(arr)):
+        if arr[i] == arr[j]:
+            print(arr[j])
