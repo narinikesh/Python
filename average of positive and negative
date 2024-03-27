@@ -1,0 +1,35 @@
+def main():
+    positive_sum = 0
+    positive_count = 0
+    negative_sum = 0
+    negative_count = 0
+    
+    print("Enter -1 to exit...")
+    
+    while True:
+        number = int(input("Enter the number: "))
+        
+        if number == -1:
+            break
+        
+        if number >= 0:
+            positive_sum += number
+            positive_count += 1
+        else:
+            negative_sum += number
+            negative_count += 1
+    
+    if positive_count > 0:
+        avg_positive = positive_sum / positive_count
+        print("The average of positive numbers is:", avg_positive)
+    else:
+        print("No positive numbers entered.")
+    
+    if negative_count > 0:
+        avg_negative = negative_sum / negative_count
+        print("The average of negative numbers is:", avg_negative)
+    else:
+        print("No negative numbers entered.")
+
+if __name__ == "__main__":
+    main()
