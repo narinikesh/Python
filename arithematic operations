@@ -1,0 +1,31 @@
+def calculate_operations(x, n, choice):
+    if choice == 1:
+        result = pow(x, n)
+        print("Pow({}, {}) = {}".format(x, n, result))
+    elif choice == 2:
+        result = x + n
+        print("Add({}, {}) = {}".format(x, n, result))
+    elif choice == 3:
+        result = x - n
+        print("Sub({}, {}) = {}".format(x, n, result))
+    elif choice == 4:
+        result = x * n
+        print("Mul({}, {}) = {}".format(x, n, result))
+    elif choice == 5:
+        if n != 0:
+            result = x / n
+            print("Div({}, {}) = {}".format(x, n, result))
+        else:
+            print("Cannot divide by zero.")
+    else:
+        print("Invalid choice.")
+
+def main():
+    x = float(input("Enter the value of X: "))
+    n = float(input("Enter the value of N: "))
+    choice = int(input("Enter your choice (1: Pow, 2: Add, 3: Sub, 4: Mul, 5: Div): "))
+    
+    calculate_operations(x, n, choice)
+
+if __name__ == "__main__":
+    main()
