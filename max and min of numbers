@@ -1,0 +1,34 @@
+def divide(l):
+  if(len(l)>1):
+    mid=len(l)//2
+    left=l[:mid]
+    right=l[mid:]
+    divide(left)
+    divide(right)
+    i,j,k=0,0,0
+
+    while(i<len(left) and j<len(right)):
+        if(left[i]<right[i]):
+            l[k]=left[i]
+            i=i+1
+        else:
+            l[k]=right[j]
+            j=j+1
+        k=k+1
+    while(i<len(left)):
+        l[k]=left[i]
+        i=i+1
+        k=k+1
+    while(j<len(right)):
+        l[k]=right[j]
+        j=j+1
+        k=k+1
+    return l
+n=int(input("enter the size of array:"))
+list=[]
+for i in range(0,n):
+    b=int(input("enter element:"))
+    list.append(b)
+divide(list)
+print("the minimum element is :",list[0])
+print("the maximum element is :",list[-1])
