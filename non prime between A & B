@@ -1,0 +1,22 @@
+def is_prime(n, divisor=2):
+    if n < 2:  
+        return False
+    elif n == divisor:  
+        return True
+    elif n % divisor == 0:
+        return False
+    else:
+        return is_prime(n, divisor + 1)
+    
+def find_non_primes(start, end):
+    non_primes = []
+    for num in range(start, end + 1):
+        if not is_prime(num):
+            non_primes.append(num)
+    return non_primes
+
+start = int(input("Enter the start of the range: "))
+end = int(input("Enter the end of the range: "))
+non_prime_numbers = find_non_primes(start, end)
+print("Non-prime numbers in the range:")
+print(non_prime_numbers)
