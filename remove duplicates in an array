@@ -1,0 +1,12 @@
+def remove_duplicates(arr):
+    unique_nums = set()
+    result = []
+    for num in arr:
+        if num not in unique_nums:
+            result.append(num)
+            unique_nums.add(num) 
+    return result
+input_array = list(map(int, input("Enter array elements separated by spaces: ").split()))
+result = remove_duplicates(input_array)
+print("Original array:", input_array)
+print("Array with duplicates removed:", result)
